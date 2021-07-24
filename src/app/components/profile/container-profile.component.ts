@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { tap } from 'rxjs/operators';
 import { DataService } from 'src/app/data.service';
-import { User } from 'src/app/model/user';
+import { User } from 'src/app/model/User';
 
 
 @Component({
@@ -12,18 +12,18 @@ import { User } from 'src/app/model/user';
 export class ContainerProfileComponent implements OnInit {
 
   users: User[] = [];
-  constructor(private dataSvc: DataService){}
+  constructor(private dataSvc: DataService) { }
 
-  
+
   ngOnInit(): void {
     this.getUsers();
   }
 
-  getUsers():void {
+  getUsers(): void {
     console.log('service ->', this.dataSvc);
     this.dataSvc.getAllUsers()
-    .pipe(
-      tap((users: User[]) => this.users = users)
-    ).subscribe()
+      .pipe(
+        tap((users: User[]) => this.users = users)
+      ).subscribe()
   }
 }

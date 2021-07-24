@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy } from '@angular/core';
 import { Component, Input } from '@angular/core';
-import { User } from 'src/app/model/user';
+import { User } from 'src/app/model/User';
 
 
 @Component({

@@ -1,9 +1,9 @@
 export class User {
-    public active!: boolean ;
+    public active: boolean = true;
     public createOn: string; 
 
     constructor(public login:string, public avatar_url:string){
-        this.createOn = new Date().toLocaleDateString()
+        this.createOn = new Date().toLocaleDateString();
     }
 
     public disable(){
