@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { tap } from 'rxjs/operators';
 import { DataService } from 'src/app/data.service';
-import { User } from 'src/app/model/user';
+import { User } from '../../model/User';
 
 
 @Component({
@@ -20,7 +20,6 @@ export class ContainerProfileComponent implements OnInit {
   }
 
   getUsers():void {
-    console.log('service ->', this.dataSvc);
     this.dataSvc.getAllUsers()
     .pipe(
       tap((users: User[]) => this.users = users)
